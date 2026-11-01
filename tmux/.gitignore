@@ -1,0 +1,2 @@
+# TPM installs and updates plugins outside this config repository.
+/plugins

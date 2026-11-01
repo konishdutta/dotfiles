@@ -1,0 +1,11 @@
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
+
+# Timestamped safety copies are retained locally, outside the tracked lockfile.
+lazy-lock.json.bak-*
