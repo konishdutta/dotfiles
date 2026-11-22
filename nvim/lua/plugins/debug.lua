@@ -198,6 +198,16 @@ return {
         justMyCode = true,
         subProcess = true,
       })
+      table.insert(dap.configurations.python, {
+        type = "python",
+        request = "launch",
+        name = "Triton Interpreter",
+        program = "${file}",
+        pythonPath = py,
+        env = { TRITON_INTERPRET = "1" },
+        justMyCode = false,
+        subProcess = true,
+      })
       vim.api.nvim_create_user_command("PythonSelect", function()
         local paths = {}
         for _, p in ipairs({

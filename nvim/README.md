@@ -14,6 +14,12 @@ Python tests use `<Space>t` and the neotest menu; `uv run pytest` also works in 
 
 The debug adapter runs from `~/.local/share/nvim/debugpy`, separately from the target interpreter. Target resolution is selected interpreter, active `VIRTUAL_ENV`, active `CONDA_PREFIX`, project `.venv` / `venv` / `env`, then `python3`. Launch defaults are `justMyCode=true` and `subProcess=true`; change these in `lua/plugins/debug.lua`. Run the sample with `cd ~/.config/nvim/docs/python-debug-sample && uv run pytest -q`. To manually verify debugging, open `tests/test_compute.py`, set a breakpoint inside `test_summarize` with `<Space>db`, then use `<Space>dn` or `<Space>dc`; confirm the DAP UI opens, inspect locals, step, and continue. For the current file with arguments, choose `file:args` from the DAP configuration picker; `<Space>dM` launches a module and prompts for module name and arguments.
 
+For Triton interpreter debugging, choose `Triton Interpreter` in the DAP
+configuration picker. It launches the current file with `TRITON_INTERPRET=1`
+and allows stepping into user code outside the current file. This requires a
+project interpreter with Triton installed. To debug a `@triton.jit` kernel,
+set a breakpoint on a kernel statement and run a small input that invokes it.
+
 ## Codex and terminal
 
 `<Space>ai` toggles the interactive Codex CLI; `<Space>as` sends the current file/selection context. Codex remains independently available by running `codex` in a WSL terminal. `<Space>at` toggles the integrated terminal, and `<Space>gg` opens LazyGit.

@@ -12,6 +12,10 @@ A compact, user-managed tmux setup for Ubuntu on WSL2 and Windows Terminal. The 
 
 ## Start and manage
 
+`Ctrl+A h` / `Ctrl+A l` moves to the previous/next window. `escape-time` is set
+to 50 ms to improve Windows Terminal escape-sequence and bracketed-paste
+handling.
+
 Open Ubuntu in Windows Terminal, `cd` to a directory if desired, then run `tmux`. Nothing launches tmux automatically on Windows boot. After a reboot, reopen Ubuntu and run `tmux`; Continuum restores at server startup from the last successful snapshot.
 
 Make sessions and layouts yourself. `Ctrl+A c` makes a window, and `Ctrl+A |` / `Ctrl+A -` split the current directory. `Ctrl+A f` opens the fzf project switcher. Returning to an existing project session preserves its windows and panes.

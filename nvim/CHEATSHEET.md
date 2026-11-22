@@ -14,6 +14,7 @@ Leader is Space. Press Space and pause for which-key.
 | Debug start, breakpoint, step over/into/out | F5 / F9 / F10 / F11 / Shift-F11 |
 | Debug fallback | Space dc, db, do, di, dO |
 | Debug UI / REPL / nearest test / class | Space du / dr / dn / dC |
+| Triton interpreter launch | Select “Triton Interpreter” in DAP configurations |
 | Test actions | Space t |
 | Codex toggle / prompt context | Space ai / Space as |
 | UndoTree | Space u |
