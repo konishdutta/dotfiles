@@ -35,6 +35,7 @@ if [[ ! -e "$HOME/.config/tmux/plugins" ]]; then
   ln -s "$HOME/.tmux/plugins" "$HOME/.config/tmux/plugins"
 fi
 "$DOTFILES_DIR/scripts/install-sessionizer.sh"
+backup_and_link "$DOTFILES_DIR/scripts/tmux-git-ascii" "$HOME/.local/bin/tmux-git-ascii"
 
 cat <<'MSG'
 Configuration files are linked and existing paths were backed up before linking.

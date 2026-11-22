@@ -122,6 +122,13 @@ return {
         desc = "Stop debug",
       },
       {
+        "<leader>dr",
+        function()
+          require("dapui").toggle({ layout = 1 })
+        end,
+        desc = "Toggle Debug REPL",
+      },
+      {
         "<leader>dM",
         function()
           require("dap").run({
@@ -179,6 +186,7 @@ return {
         return vim.fn.exepath("python3")
       end
       require("dap-python").resolve_python = py
+      vim.fn.sign_define("DapStopped", { text = "➜", texthl = "DiagnosticWarn", linehl = "Visual" })
       for _, c in ipairs(dap.configurations.python or {}) do
         c.pythonPath = py
         c.justMyCode = true
@@ -206,7 +214,6 @@ return {
         pythonPath = py,
         env = { TRITON_INTERPRET = "1" },
         justMyCode = false,
-        subProcess = true,
       })
       vim.api.nvim_create_user_command("PythonSelect", function()
         local paths = {}
@@ -240,6 +247,12 @@ return {
     "rcarriga/nvim-dap-ui",
     opts = {
       floating = { border = "rounded" },
+      controls = { enabled = false },
+      -- Order these so the REPL spans the bottom and scopes stay in a left rail.
+      layouts = {
+        { position = "bottom", size = 10, elements = { "repl" } },
+        { position = "left", size = 32, elements = { "scopes" } },
+      },
     },
   },
 }

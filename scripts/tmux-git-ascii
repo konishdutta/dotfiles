@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Keep the Tokyo Night git widget's output safe for terminals that render
+# Unicode separators inconsistently.
+"$HOME/.config/tmux/plugins/tokyo-night-tmux/src/git-status.sh" "$1" | LC_ALL=C tr -cd '\11\12\15\40-\176'

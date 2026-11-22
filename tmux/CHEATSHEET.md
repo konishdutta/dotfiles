@@ -16,7 +16,7 @@ Prefix is **Ctrl+A**. Press it twice to send Ctrl+A to the application.
 - `Ctrl+A ,` — rename current window.
 - `Ctrl+A 1` … `9` — select window by number.
 - `Ctrl+A n` / `p` — next / previous window; `Ctrl+A Tab` — last window.
-- `Ctrl+A h` / `l` — previous / next window.
+- `Ctrl+A h/j/k/l` — move between panes (and Neovim splits).
 - `Ctrl+A &` — close window (confirm).
 - `Ctrl+A <` / `>` — reorder window left / right.
 

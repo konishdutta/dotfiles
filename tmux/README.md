@@ -12,12 +12,12 @@ A compact, user-managed tmux setup for Ubuntu on WSL2 and Windows Terminal. The 
 
 ## Start and manage
 
-`Ctrl+A h` / `Ctrl+A l` moves to the previous/next window. `escape-time` is set
-to 50 ms to improve Windows Terminal escape-sequence and bracketed-paste
-handling. The status bar uses plain ASCII session/window labels; the explicit
-format overrides run after TPM so the theme plugin cannot duplicate or replace
-the bar. Synchronized terminal updates are enabled for `xterm-256color` to
-reduce redraw artifacts.
+`Ctrl+A h/j/k/l` moves between panes. `escape-time` is set to 50 ms to improve
+Windows Terminal escape-sequence and bracketed-paste handling. The status bar
+uses plain ASCII session/window labels and a git
+widget passed through `scripts/tmux-git-ascii`; the explicit format runs after
+TPM so the theme plugin cannot duplicate or replace the bar. Synchronized
+terminal updates are enabled for `xterm-256color` to reduce redraw artifacts.
 
 Open Ubuntu in Windows Terminal, `cd` to a directory if desired, then run `tmux`. Nothing launches tmux automatically on Windows boot. After a reboot, reopen Ubuntu and run `tmux`; Continuum restores at server startup from the last successful snapshot.
 
